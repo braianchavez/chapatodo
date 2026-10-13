@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chapatodo · Mates artesanales</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6efe3;--bg2:#ece0cc;--ink:#1b1511;--mute:#6b5a4a;--leather:#8a4b25;--wood:#b97a46;--cream:#fbf7ef;--green:#1f3a2d;--green2:#2b4d3c;--line:rgba(27,21,17,.14);--card:#fffaf1;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17120e;--bg2:#211a14;--ink:#f3e9d9;--mute:#b8a690;--card:#241c15;--line:rgba(243,233,217,.16);--cream:#f3e9d9}}
+:root[data-theme="dark"]{--bg:#17120e;--bg2:#211a14;--ink:#f3e9d9;--mute:#b8a690;--card:#241c15;--line:rgba(243,233,217,.16);--cream:#f3e9d9}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 Figtree,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.05;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}:focus-visible{outline:2px solid var(--wood);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}section{padding:110px 0}
+h2{font-size:clamp(34px,5vw,56px)}.sub{color:var(--mute);max-width:52ch;margin-top:14px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:99px;font-weight:600;font-size:15px;border:1.5px solid var(--ink);cursor:pointer;transition:transform .25s,background .25s,color .25s;font-family:inherit;background:none;color:inherit}
+.btn:hover{transform:translateY(-2px)}.btn.p{background:var(--ink);color:var(--bg)}.btn.p:hover{background:var(--leather);border-color:var(--leather);color:#fff}
+.btn.wa{background:#1f3a2d;border-color:#1f3a2d;color:#f6efe3}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;padding-top:env(safe-area-inset-top,0px);backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 78%,transparent);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:Fraunces,serif;font-weight:800;font-size:24px;letter-spacing:-.03em}
+nav ul{display:flex;gap:28px;list-style:none;padding:0;font-size:15px;font-weight:500}nav ul a{opacity:.75;transition:opacity .2s}nav ul a:hover{opacity:1}
+/* hero */
+.hero{min-height:100vh;min-height:100svh;padding:110px 0 60px;display:flex;align-items:center;background:radial-gradient(1200px 700px at 78% 40%,var(--bg2),var(--bg) 70%)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(46px,8vw,102px);font-weight:800}.hero p{font-size:19px;color:var(--mute);max-width:44ch;margin:22px 0 34px}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.photo{position:relative;border-radius:200px 200px 24px 24px;overflow:hidden;aspect-ratio:4/5;background:linear-gradient(160deg,#c89a6b,#7a4322 60%,#3a2112);display:grid;place-items:center;box-shadow:0 40px 80px -30px rgba(60,30,10,.5)}
+.photo svg{width:78%;filter:drop-shadow(0 30px 25px rgba(0,0,0,.35));animation:float 7s ease-in-out infinite}
+.photo small{position:absolute;bottom:14px;left:0;right:0;text-align:center;color:#f6efe3aa;font-size:12px}
+@keyframes float{50%{transform:translateY(-12px) rotate(-1.5deg)}}
+.benefits{background:var(--ink);color:var(--bg)}.benefits .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:22px 24px;font-weight:500;font-size:15px}
+.benefits span{display:flex;gap:10px;align-items:center;justify-content:center}.benefits svg{width:22px;height:22px;stroke:var(--wood);fill:none;stroke-width:1.6}
+/* dia de la madre */
+.madre{background:var(--green);color:#f6efe3;position:relative;overflow:hidden;padding:0}
+.ribbon{background:var(--wood);color:#1b1511;text-align:center;font-weight:600;font-size:14px;padding:10px;overflow:hidden;white-space:nowrap}
+.ribbon div{display:inline-block;animation:slide 28s linear infinite}@keyframes slide{to{transform:translateX(-50%)}}
+.madre .in{padding:100px 0;position:relative}
+.flor{position:absolute;opacity:.09;stroke:#f6efe3;fill:none;stroke-width:1.2;pointer-events:none}
+.madre .grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.madre h2{font-size:clamp(38px,6vw,72px)}.madre .sub{color:#d6cdb9}
+.count{display:flex;gap:10px;margin:28px 0}.count div{background:#ffffff14;border:1px solid #ffffff26;border-radius:14px;padding:12px 16px;text-align:center;min-width:72px}
+.count b{display:block;font:600 30px Fraunces,serif}.count small{font-size:12px;color:#d6cdb9}
+.promo{background:var(--cream);color:#1b1511;border-radius:28px;padding:34px;position:relative;box-shadow:0 40px 70px -30px #000a}
+.promo .tag{position:absolute;top:-14px;right:24px;background:var(--leather);color:#fff;font-size:13px;font-weight:600;padding:7px 16px;border-radius:99px}
+.promo .art{background:linear-gradient(150deg,#d9b48a,#8a4b25);border-radius:18px;height:220px;display:grid;place-items:center;margin-bottom:24px}.promo .art svg{height:86%}
+.promo ul{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0 24px}
+.promo li{display:flex;gap:10px;align-items:center;font-size:15px;font-weight:500}.promo li svg{width:26px;height:26px;stroke:var(--green);fill:none;stroke-width:1.6;flex:none}
+.price{display:flex;align-items:baseline;gap:12px;margin-bottom:18px}.price b{font:800 46px Fraunces,serif;color:var(--leather)}.price s{color:#8b7a68}
+.promo .btn{width:100%;justify-content:center}
+/* catalogo */
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:34px 0 40px}
+.chip{padding:10px 20px;border-radius:99px;border:1.5px solid var(--line);background:none;color:inherit;font:500 15px Figtree,sans-serif;cursor:pointer;transition:all .25s}
+.chip:hover{border-color:var(--ink)}.chip[aria-pressed=true]{background:var(--green);border-color:var(--green);color:#f6efe3}
+.cat{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:28px}
+.prod{background:var(--card);border-radius:20px;overflow:hidden;border:1px solid var(--line);transition:transform .35s,box-shadow .35s;animation:in .5s both}
+.prod:hover{transform:translateY(-6px);box-shadow:0 26px 40px -24px rgba(60,30,10,.45)}
+@keyframes in{from{opacity:0;transform:translateY(14px)}}
+.prod .img{aspect-ratio:1;display:grid;place-items:center;position:relative}.prod .img svg{width:62%;transition:transform .5s}.prod:hover .img svg{transform:scale(1.07) rotate(-3deg)}
+.prod .lab{position:absolute;top:14px;left:14px;background:var(--ink);color:var(--bg);font-size:12px;font-weight:600;padding:5px 12px;border-radius:99px}
+.prod .b{padding:20px 22px 24px}.prod h3{font-size:23px}.prod p{color:var(--mute);font-size:15px;margin:6px 0 16px;line-height:1.45}
+.prod .f{display:flex;justify-content:space-between;align-items:center}.prod .f b{font:600 22px Fraunces,serif}
+.prod .btn{padding:9px 20px;font-size:14px}
+/* carruseles */
+.car{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 24px 26px;margin:36px -24px 0;scrollbar-width:thin}
+.car>*{scroll-snap-align:start;flex:none}
+.reel{width:240px;aspect-ratio:9/16;border-radius:22px;position:relative;overflow:hidden;display:block;color:#fff;transition:transform .3s}
+.reel:hover{transform:translateY(-6px)}.reel .bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.reel::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,#000b)}
+.reel .m{position:absolute;bottom:16px;left:16px;right:16px;z-index:2;font-size:14px;font-weight:600;display:flex;justify-content:space-between}
+.reel .pl{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;width:56px;height:56px;border-radius:50%;background:#ffffff33;backdrop-filter:blur(6px);display:grid;place-items:center}
+.note{font-size:13px;color:var(--mute);margin-top:6px}
+.qual{width:300px;border-radius:22px;overflow:hidden;background:var(--card);border:1px solid var(--line)}
+.qual .ph{height:320px;display:grid;place-items:center;color:#f6efe3}.qual .ph svg{width:70%;height:70%}
+.qual div.t{padding:18px 22px 24px}.qual h3{font-size:22px}.qual p{color:var(--mute);font-size:15px;margin-top:6px;line-height:1.45}
+/* footer */
+footer{background:var(--ink);color:var(--bg);padding:100px 0 40px;text-align:center}
+footer h2{font-size:clamp(36px,6vw,70px)}footer p{color:#bdae98;margin:16px auto 32px;max-width:46ch}
+footer .btn{border-color:var(--bg);color:var(--bg)}footer .btn.p{background:var(--bg);color:var(--ink)}
+.copy{margin-top:80px;font-size:13px;color:#8d806e}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .9s,transform .9s}.rv.on{opacity:1;transform:none}
+@media(max-width:860px){nav ul{display:none}.hero .wrap,.madre .grid{grid-template-columns:1fr}.photo{max-width:420px;margin:0 auto;order:-1}
+.benefits .wrap{grid-template-columns:1fr 1fr}section{padding:80px 0}.madre .in{padding:70px 0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}.rv{opacity:1;transform:none}}
+</style></head><body>
+<nav><div class="wrap"><a href="#top" class="logo">Chapatodo</a>
+<ul><li><a href="#madre">Día de la Madre</a></li><li><a href="#catalogo">Catálogo</a></li><li><a href="#rondas">Rondas</a></li><li><a href="#calidad">Calidad</a></li></ul>
+<a class="btn p wa-l" style="padding:9px 20px">Consultar</a></div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+<div><h1>El mate que acompaña cada ronda.</h1>
+<p>Cada mate se talla, cose y cura a mano en nuestro taller. Madera, cuero y tiempo: nada se apura.</p>
+<div class="row"><a class="btn p" href="#catalogo">Ver catálogo</a><a class="btn wa-l">Consultar por WhatsApp</a></div></div>
+<div class="photo"><span id="heroMate"></span><small>Reemplazá por tu foto lifestyle</small></div></div></header>
+
+<div class="benefits"><div class="wrap">
+<span><svg viewBox="0 0 24 24"><path d="M7 11V6a2 2 0 014 0v5m0-3a2 2 0 014 0v3m0-1a2 2 0 014 0v5a7 7 0 01-7 7h-1a7 7 0 01-6-3l-3-5a2 2 0 013-2l2 2"/></svg>Hechos a mano</span>
+<span><svg viewBox="0 0 24 24"><path d="M4 20l4-1L19 8l-3-3L5 16zM14 7l3 3"/></svg>Grabados personalizados</span>
+<span><svg viewBox="0 0 24 24"><path d="M2 7h12v9H2zM14 10h4l4 3v3h-8M6 19a2 2 0 100-4 2 2 0 000 4zm11 0a2 2 0 100-4 2 2 0 000 4z"/></svg>Envíos a todo el país</span>
+<span><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Stock disponible</span></div></div>
+
+<section class="madre" id="madre">
+<div class="ribbon"><div id="rib"></div></div>
+<div class="in wrap">
+<svg class="flor" style="top:30px;right:-40px;width:340px" viewBox="0 0 100 100"><g id="fl"><circle cx="50" cy="50" r="6"/><ellipse cx="50" cy="28" rx="8" ry="16"/><ellipse cx="50" cy="72" rx="8" ry="16"/><ellipse cx="28" cy="50" rx="16" ry="8"/><ellipse cx="72" cy="50" rx="16" ry="8"/></g></svg>
+<svg class="flor" style="bottom:-60px;left:-60px;width:260px" viewBox="0 0 100 100"><use href="#fl"/></svg>
+<div class="grid">
+<div class="rv"><h2>Regalos para el Día de la Madre</h2>
+<p class="sub">Sorprendela con un mate único, personalizado y listo para regalar.</p>
+<p style="margin-top:26px;font-weight:600">Promoción por tiempo limitado</p>
+<div class="count" id="count"><div><b>0</b><small>días</small></div><div><b>0</b><small>horas</small></div><div><b>0</b><small>min</small></div><div><b>0</b><small>seg</small></div></div></div>
+<div class="promo rv"><span class="tag">Edición Día de la Madre</span>
+<div class="art"><span id="promoMate" style="display:contents"></span></div>
+<h3 style="font-size:30px">Pack Regalo Mamá</h3>
+<ul>
+<li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Mate seleccionado</li>
+<li><svg viewBox="0 0 24 24"><path d="M12 3v13M9 16h6M12 16v5"/></svg>Bombilla incluida</li>
+<li><svg viewBox="0 0 24 24"><path d="M4 20l4-1L19 8l-3-3L5 16z"/></svg>Grabado personalizado</li>
+<li><svg viewBox="0 0 24 24"><path d="M3 9h18v4H3zM5 13v8h14v-8M12 9v12M12 9c-2-5-6-4-5-1 .5 1.500 3 1 5 1zm0 0c2-5 6-4 5-1-.5 1.500-3 1-5 1z"/></svg>Caja de regalo</li></ul>
+<div class="price"><b>$54.900</b><s>$62.000</s></div>
+<a class="btn p wa-l" data-msg="Hola! Quiero consultar por la promo del Día de la Madre (Pack Regalo Mamá)">Consultar esta promoción</a></div>
+</div></div></section>
+
+<section id="catalogo"><div class="wrap">
+<h2 class="rv">Catálogo</h2><p class="sub rv">Cada pieza es única. Consultanos disponibilidad, maderas y grabados por mensaje.</p>
+<div class="filters" id="filters" role="group" aria-label="Filtrar por categoría"></div>
+<div class="cat" id="cat"></div></div></section>
+
+<section id="rondas" style="background:var(--bg2)"><div class="wrap">
+<h2 class="rv">Así se vive cada ronda</h2><p class="sub rv">Los reels más recientes de nuestro Instagram. Tocá uno para verlo en Instagram.</p>
+<div class="car" id="reels"></div>
+<p class="note">Componente listo para conectar con la Instagram Graph API (campos media_url, thumbnail_url y permalink). Editá el arreglo REELS del script o cargalo desde tu backend con tu token.</p></div></section>
+
+<section id="calidad"><div class="wrap">
+<h2 class="rv">Nuestra calidad, de cerca</h2><p class="sub rv">Costuras, virolas, madera, cuero y grabados: los detalles que no se ven de lejos.</p>
+<div class="car" id="qual"></div></div></section>
+
+<footer><div class="wrap">
+<h2>Seguinos y armá tu próxima ronda</h2>
+<p>Novedades, procesos de taller y mates recién terminados en nuestro Instagram.</p>
+<div class="row" style="justify-content:center"><a class="btn p" href="https://www.instagram.com/chapatodo_/" target="_blank" rel="noopener">@chapatodo_ en Instagram</a><a class="btn wa-l">Escribinos por WhatsApp</a></div>
+<div class="copy">© 2026 Chapatodo · Mates artesanales · Hecho en Argentina</div></div></footer>
+
+<script>
+const WA="5491100000000"; // ← reemplazá por tu número (código país + área + número)
+const wa=m=>`https://wa.me/${WA}?text=${encodeURIComponent(m)}`;
+document.querySelectorAll('.wa-l').forEach(a=>{a.href=wa(a.dataset.msg||'Hola! Quiero consultar por sus mates artesanales');a.target='_blank';a.rel='noopener'});
+
+// Ilustración de mate (reemplazar por fotos reales)
+function mate(t,c1='#5a2f17',c2='#2a1509'){
+ const S={imperial:'M40 70h120l-8 90q-4 24-52 24t-52-24z',torpedo:'M50 60h100q-6 30-22 60t-28 70q-12-40-28-70T50 60z',camionero:'M30 75h140l4 60q0 55-74 55t-74-55z',criollo:'M55 85h90l-6 70q-4 28-39 28t-39-28z',algarrobo:'M42 70h116l-10 100q-4 18-48 18t-48-18z'};
+ if(t==='bombilla')return`<svg viewBox="0 0 200 200"><path d="M150 20L72 150" stroke="#d8d2c4" stroke-width="7" stroke-linecap="round"/><ellipse cx="66" cy="160" rx="20" ry="12" fill="#bdb6a5" transform="rotate(-30 66 160)"/><path d="M154 14l10-4" stroke="#8a4b25" stroke-width="9" stroke-linecap="round"/></svg>`;
+ const id='g'+Math.random().toString(36).slice(2,7);
+ return`<svg viewBox="0 0 200 200"><defs><linearGradient id="${id}" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="${c1}"/><stop offset="1" stop-color="${c2}"/></linearGradient></defs><path d="${S[t]||S.imperial}" fill="url(#${id})"/><ellipse cx="100" cy="${t==='torpedo'?60:t==='camionero'?75:70}" rx="${t==='torpedo'?50:t==='criollo'?45:t==='camionero'?70:60}" ry="9" fill="#120a05"/><path d="M${t==='torpedo'?58:40} ${t==='torpedo'?70:80}h${t==='torpedo'?84:120}" stroke="#d8c7a8" stroke-width="5" opacity=".8"/></svg>`}
+document.getElementById('heroMate').style.display='contents';
+heroMate.innerHTML=mate('imperial','#4a2412','#1f0f07');promoMate.innerHTML=mate('torpedo','#5a2f17','#2a1509');
+
+const CATS=['Todos','Imperiales','Torpedos','Camioneros','Criollos','Algarrobo','Bombillas'];
+const P=[
+['Imperial Clásico','Imperiales','Calabaza forrada en cuero vaqueta, virola de alpaca.',38500,'Más vendido','imperial','#6a3a1c','#2f170a','#e8d4b5'],
+['Imperial Negro','Imperiales','Cuero negro con costura a mano en hilo encerado.',41000,'Nuevo','imperial','#222','#050505','#d9c7a5'],
+['Torpedo Habano','Torpedos','Silueta estilizada, cuero color habano y boca ancha.',36000,'','torpedo','#8a4b25','#3d1f0d','#ecd9ba'],
+['Torpedo Miel','Torpedos','Cuero natural al tono, virola de acero cepillado.',37500,'Últimas unidades','torpedo','#c07c3f','#6b3c17','#f1e1c4'],
+['Camionero Grande','Camioneros','Capacidad extra para rondas largas. Base reforzada.',44000,'Más vendido','camionero','#5b3420','#24120a','#e6d2b1'],
+['Camionero Cosido','Camioneros','Doble costura a la vista y virola grabada.',46500,'','camionero','#7a4322','#33190c','#ead7b8'],
+['Criollo Tradicional','Criollos','Chico, redondo y de boca justa. El de siempre.',29500,'','criollo','#9a5a2c','#46250f','#efdcbc'],
+['Criollo Verde','Criollos','Cuero verde oscuro con detalles en alpaca.',32000,'Nuevo','criollo','#2f5a42','#12261b','#e8d6b6'],
+['Algarrobo Pulido','Algarrobo','Tallado en una sola pieza de algarrobo macizo.',34000,'','algarrobo','#c28a4f','#7a4a22','#f3e3c6'],
+['Algarrobo Oscuro','Algarrobo','Curado con aceite, veta marcada y base de cuero.',35500,'Últimas unidades','algarrobo','#7a4a2a','#3a2010','#e9d5b3'],
+['Bombilla Pico de Loro','Bombillas','Alpaca, filtro desarmable y pico curvo.',16500,'','bombilla'],
+['Bombilla Resorte','Bombillas','Acero inoxidable con filtro de resorte flexible.',14000,'Nuevo','bombilla']];
+const bg={bombilla:'linear-gradient(150deg,#e9dcc5,#cdb792)'};
+filters.innerHTML=CATS.map((c,i)=>`<button class="chip" aria-pressed="${!i}" data-c="${c}">${c}</button>`).join('');
+function draw(c){cat.innerHTML=P.filter(p=>c==='Todos'||p[1]===c).map((p,i)=>`<article class="prod" style="animation-delay:${i*50}ms"><div class="img" style="background:${bg[p[5]]||'linear-gradient(150deg,#e8d6b9,#d1b48a)'}">${p[4]?`<span class="lab">${p[4]}</span>`:''}${mate(p[5],p[6],p[7])}</div><div class="b"><h3>${p[0]}</h3><p>${p[2]}</p><div class="f"><b>$${p[3].toLocaleString('es-AR')}</b><a class="btn" target="_blank" rel="noopener" href="${wa('Hola! Quiero consultar por: '+p[0])}">Consultar</a></div></div></article>`).join('')}
+draw('Todos');
+filters.onclick=e=>{const b=e.target.closest('.chip');if(!b)return;filters.querySelectorAll('.chip').forEach(x=>x.setAttribute('aria-pressed',x===b));draw(b.dataset.c)};
+
+// Reels: completar con datos de la Instagram Graph API (thumbnail_url, permalink, play_count)
+const REELS=[1,2,3,4,5,6].map(i=>({thumb:'',views:[12400,8900,21300,5600,17800,9400][i-1],url:'https://www.instagram.com/chapatodo_/reels/'}));
+const tone=['#7a4322,#2a1509','#2f5a42,#10241a','#b97a46,#4a2812','#3a2112,#120a05','#8a4b25,#2a1509','#1f3a2d,#0b1812'];
+reels.innerHTML=REELS.map((r,i)=>`<a class="reel" href="${r.url}" target="_blank" rel="noopener" aria-label="Ver reel en Instagram"><div class="bg" style="background-image:${r.thumb?`url(${r.thumb})`:`linear-gradient(160deg,${tone[i]})`}"></div><span class="pl"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span><div class="m"><span>▶ ${r.views.toLocaleString('es-AR')}</span><span>Ver reel</span></div></a>`).join('');
+
+const Q=[['Costuras','Hilo encerado, punto a punto y sin apuro.','#7a4322,#2a1509','<path d="M10 20c20 40 40-40 60 0s40-40 60 0 40-40 60 0" stroke="#e8d4b5" stroke-width="4" fill="none" stroke-dasharray="10 8"/>'],
+['Virolas','Alpaca y acero que acompañan la boca del mate.','#3a2112,#120a05','<ellipse cx="100" cy="100" rx="70" ry="22" fill="none" stroke="#d8d2c4" stroke-width="12"/>'],
+['Madera','Algarrobo macizo, veta a la vista.','#b97a46,#5a3216','<path d="M20 40c60-20 100 20 160 0M20 80c60-20 100 20 160 0M20 120c60-20 100 20 160 0" stroke="#4a2812" stroke-width="3" fill="none" opacity=".6"/>'],
+['Cuero','Vaqueta curtida, flexible y que mejora con el uso.','#8a4b25,#33190c','<rect x="30" y="30" width="140" height="140" rx="18" fill="none" stroke="#e8d4b5" stroke-width="3" stroke-dasharray="3 7"/>'],
+['Grabados','Iniciales, nombres y fechas, hechos a pedido.','#1f3a2d,#0b1812','<text x="100" y="118" text-anchor="middle" font-size="64" font-family="Fraunces,serif" fill="#e8d4b5">M&amp;J</text>']];
+qual.innerHTML=Q.map(q=>`<article class="qual"><div class="ph" style="background:linear-gradient(150deg,${q[2]})"><svg viewBox="0 0 200 200">${q[3]}</svg></div><div class="t"><h3>${q[0]}</h3><p>${q[1]}</p></div></article>`).join('');
+
+rib.innerHTML=Array(12).fill('Especial Día de la Madre · Grabado y caja de regalo incluidos &nbsp;✦&nbsp; ').join('');
+// Cuenta regresiva: Día de la Madre (3.er domingo de octubre) = 18/10/2026
+const end=new Date('2026-10-18T23:59:59-03:00');
+function tick(){let d=Math.max(0,end-Date.now()),v=[86400e3,3600e3,6e4,1e3].map(u=>{const x=Math.floor(d/u);d-=x*u;return x});
+count.querySelectorAll('b').forEach((b,i)=>b.textContent=String(v[i]).padStart(2,'0'))}tick();setInterval(tick,1000);
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script></body></html>
